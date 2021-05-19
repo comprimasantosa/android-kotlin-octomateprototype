@@ -34,7 +34,7 @@ object UIUtil {
 
     fun showDialogTimeIn(context: Context, navigation: () -> Unit) {
         alertDialogBuilder = AlertDialog.Builder(context)
-        dateFormat = SimpleDateFormat("HH:mm, dd MMM yyyy", Locale.ROOT)
+        dateFormat = SimpleDateFormat("HH:mm, dd MMM yyyy", Locale.US)
 
         val view = LayoutInflater.from(context)
             .inflate(R.layout.layout_dialog_time_in, null as ViewGroup?, false)
