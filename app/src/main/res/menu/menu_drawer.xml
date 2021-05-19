@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:title="@string/label_home"
+            android:icon="@drawable/ic_home"/>
+        <item
+            android:id="@+id/profileFragment"
+            android:icon="@drawable/ic_person"
+            android:title="@string/label_profile"/>
+        <item
+            android:id="@+id/assignmentsFragment"
+            android:icon="@drawable/ic_document"
+            android:title="@string/label_assignments"/>
+        <item
+            android:id="@+id/timesheetFragment"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/label_timesheet"/>
+        <item
+            android:id="@+id/claimsFragment"
+            android:icon="@drawable/ic_shield"
+            android:title="@string/label_claims"/>
+        <item
+            android:id="@+id/leaveFragment"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/label_leave"/>
+        <item
+            android:id="@+id/rosterFragment"
+            android:icon="@drawable/ic_list"
+            android:title="@string/label_roster"/>
+        <item
+            android:id="@+id/payslipFragment"
+            android:icon="@drawable/ic_receipt"
+            android:title="@string/label_payslip"/>
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/label_settings"/>
+    </group>
+</menu>

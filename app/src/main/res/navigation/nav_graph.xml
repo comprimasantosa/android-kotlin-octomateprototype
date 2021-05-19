@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.primasantosa.android.octomateprototype.view.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.primasantosa.android.octomateprototype.view.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_timeInSelfieFragment"
+            app:destination="@id/timeInSelfieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeInSelfieFragment"
+        android:name="com.primasantosa.android.octomateprototype.view.timein.TimeInSelfieFragment"
+        tools:layout="@layout/fragment_time_in_selfie">
+        <action
+            android:id="@+id/action_timeInSelfieFragment_to_timeInLocationFragment"
+            app:destination="@id/timeInLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeInLocationFragment"
+        android:name="com.primasantosa.android.octomateprototype.view.timein.TimeInLocationFragment"
+        tools:layout="@layout/fragment_time_in_location">
+        <action
+            android:id="@+id/action_timeInLocationFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/timesheetFragment"
+        android:name="com.primasantosa.android.octomateprototype.view.timesheet.TimesheetFragment"
+        tools:layout="@layout/fragment_timesheet" />
+</navigation>

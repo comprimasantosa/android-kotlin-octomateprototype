@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:scrollbars="vertical"
+    tools:context=".view.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_light"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_margin="16dp"
+                android:contentDescription="@string/label_profile_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/placeholder_image" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="Matthew Tan"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/imgProfile"
+                app:layout_constraintTop_toTopOf="@+id/imgProfile"
+                tools:text="Matthew Tan" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCheckIn"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_white"
+                android:elevation="0dp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="@string/label_clock_in"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imgAnnouncements"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bg_oval_white"
+            android:src="@drawable/ic_campaign"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <TextView
+            android:id="@+id/tvAnnouncements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:text="@string/label_announcements"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgAnnouncements"
+            app:layout_constraintStart_toEndOf="@+id/imgAnnouncements"
+            app:layout_constraintTop_toTopOf="@+id/imgAnnouncements" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="@font/nunitosans_regular"
+            android:padding="4dp"
+            android:text="@string/label_view_all"
+            android:textColor="@color/primary_dark"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAnnouncements"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAnnouncements" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAnnouncements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/tvAnnouncements"
+            tools:listitem="@layout/layout_item_announcement" />
+
+        <ImageView
+            android:id="@+id/imgReminders"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_oval_white"
+            android:padding="2dp"
+            android:src="@drawable/ic_article"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvAnnouncements" />
+
+        <TextView
+            android:id="@+id/tvReminders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:text="@string/label_reminders"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgReminders"
+            app:layout_constraintStart_toEndOf="@+id/imgReminders"
+            app:layout_constraintTop_toTopOf="@+id/imgReminders" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReminders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/tvReminders"
+            tools:listitem="@layout/layout_item_reminder" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

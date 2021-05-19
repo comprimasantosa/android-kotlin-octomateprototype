@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.timein.TimeInLocationFragment">
+
+    <TextView
+        android:id="@+id/tvAccuracy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="56dp"
+        android:background="@color/primary_light"
+        android:fontFamily="@font/nunitosans_bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Current location, accuracy 14 meter(s)" />
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        app:layout_constraintTop_toBottomOf="@id/tvAccuracy" />
+
+    <TextView
+        android:id="@+id/tvLocationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/nunitosans_bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/mapFragment"
+        tools:text="Block 744, Singapore" />
+
+    <TextClock
+        android:id="@+id/tcCurrentTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunitosans_bold"
+        android:textAlignment="center"
+        android:textColor="@color/primary_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocationName"
+        android:format12Hour="hh:mm:ss aa"
+        tools:text="03:20:24 PM" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCheckIn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_green"
+        android:elevation="0dp"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="@string/label_confirm_time_in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tcCurrentTime" />
+
+    <TextView
+        android:id="@+id/tvRecaptureLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Not Correct? Recapture Location"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheckIn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
