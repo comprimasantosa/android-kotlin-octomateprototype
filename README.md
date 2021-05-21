@@ -35,6 +35,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Coil
 * Coroutines
 * Fused Location Provider
+* Google Maps
 * Jetpack DataStore Preferences
 * Jetpack Navigation
 * Koin
